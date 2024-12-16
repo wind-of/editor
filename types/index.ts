@@ -1,8 +1,9 @@
 export enum LanguagesEnum {
 	JavaScript = "javascript",
 	TypeScript = "typescript",
-	Python = "python",
-	Go = "golang",
+	HTML = "html",
+	CSS = "css",
+	JSON = "json",
 }
 
 export interface CodeExecutionPayload {
