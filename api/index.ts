@@ -1,9 +1,10 @@
 import { mockedResponses } from "~/mock"
 
-export function compileCode(payload: CodeExecutionPayload) {
-	return new Promise((resolve, reject) =>
-		setTimeout(() => {
-			Math.random() > 0.5 ? resolve(mockedResponses.success) : reject(mockedResponses.error)
-		}, 2000),
+export function executeCodeRequest(payload: CodeExecutionPayload): Promise<CodeExecutionResponse> {
+	return new Promise((resolve) =>
+		setTimeout(
+			() => resolve(Math.random() > 0.5 ? mockedResponses.success : mockedResponses.error),
+			2000,
+		),
 	)
 }

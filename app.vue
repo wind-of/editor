@@ -1,10 +1,37 @@
+<script setup lang="ts">
+import { executeCodeRequest } from "@/api"
+
+const language = ref(LanguagesEnum.JavaScript)
+const code = ref("console.log('Hello, World!')")
+const isLoading = ref(false)
+
+const executionResult = ref<CodeExecutionResponse>()
+
+async function handleCodeExecution() {
+	if (isLoading.value) {
+		return
+	}
+	const payload: CodeExecutionPayload = {
+		code: code.value,
+		language: language.value,
+	}
+	isLoading.value = true
+	executionResult.value = await executeCodeRequest(payload)
+	isLoading.value = false
+}
+</script>
+
 <template>
 	<VApp>
 		<section class="main d-flex flex-column">
-			<AppHeader class="header" />
+			<AppHeader class="header" @run="handleCodeExecution" :isLoading="isLoading" />
 			<section class="content d-flex">
 				<TaskDescription />
-				<TaskCode />
+				<TaskCode
+					v-model:language="language"
+					v-model:code="code"
+					:executionResult="executionResult"
+				/>
 			</section>
 		</section>
 	</VApp>
