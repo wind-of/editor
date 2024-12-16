@@ -28,7 +28,6 @@
 	& > * {
 		height: 100%;
 		width: 50%;
-		padding: 1rem;
 		overflow-y: auto;
 	}
 }
