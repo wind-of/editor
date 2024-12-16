@@ -6,6 +6,7 @@ export default defineNuxtConfig({
 	},
 
 	modules: [
+		"nuxt-monaco-editor",
 		"@pinia/nuxt",
 		(_options, nuxt) => {
 			nuxt.hooks.hook("vite:extendConfig", (config) => {
