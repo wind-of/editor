@@ -1,5 +1,11 @@
 <template>
-	<div class="task-description">Description</div>
+	<div class="task-description">
+		<section class="content">
+			<header>
+				<h1 class="task-title">Task-runner</h1>
+			</header>
+		</section>
+	</div>
 </template>
 
 <style code>

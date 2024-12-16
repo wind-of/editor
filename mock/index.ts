@@ -1,15 +1,15 @@
-import { CodeCompilationStatusEnum, type CodeCompilationResponse } from "~/types"
+import { CodeExecutionStatusEnum, type CodeExecutionResponse } from "~/types"
 
-export const successResponseMock: CodeCompilationResponse = {
-	status: CodeCompilationStatusEnum.Success,
+export const successResponseMock: CodeExecutionResponse = {
+	status: CodeExecutionStatusEnum.Success,
 	output: "Hello, World!",
 }
-export const errorResponseMock: CodeCompilationResponse = {
-	status: CodeCompilationStatusEnum.Error,
+export const errorResponseMock: CodeExecutionResponse = {
+	status: CodeExecutionStatusEnum.Error,
 	output: "Syntax Error:418 - I'm a teapot",
 }
 
-export const mockedResponses: Record<CodeCompilationStatusEnum, CodeCompilationResponse> = {
-	[CodeCompilationStatusEnum.Success]: successResponseMock,
-	[CodeCompilationStatusEnum.Error]: errorResponseMock,
+export const mockedResponses: Record<CodeExecutionStatusEnum, CodeExecutionResponse> = {
+	[CodeExecutionStatusEnum.Success]: successResponseMock,
+	[CodeExecutionStatusEnum.Error]: errorResponseMock,
 }

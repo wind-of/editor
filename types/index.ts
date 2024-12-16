@@ -5,17 +5,17 @@ export enum LanguagesEnum {
 	Go = "golang",
 }
 
-export interface CompileCodePayload {
+export interface CodeExecutionPayload {
 	code: string
 	language: LanguagesEnum
 }
 
-export interface CodeCompilationResponse {
-	status: CodeCompilationStatusEnum
+export interface CodeExecutionResponse {
+	status: CodeExecutionStatusEnum
 	output: string
 }
 
-export enum CodeCompilationStatusEnum {
+export enum CodeExecutionStatusEnum {
 	Success = "success",
 	Error = "error",
 }
