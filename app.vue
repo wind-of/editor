@@ -4,6 +4,7 @@ import { useDisplay } from "vuetify"
 
 const { smAndDown } = useDisplay()
 
+// Стоило бы вынести логику, связанную с редактором, в отдельный store, но в рамках этой задачи оставлю как есть
 const language = ref(LanguagesEnum.JavaScript)
 const code = ref("console.log('Hello, World!')")
 const isLoading = ref(false)
