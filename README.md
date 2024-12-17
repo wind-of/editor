@@ -1,6 +1,6 @@
 # Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Необходимо реализовать упрощённый интерфейс редактора кода (аналог leetcode.com), где пользователь может писать код на одном из заданных языков, отправлять его «на сервер» (имитация сервера) для выполнения и получать результаты.
 
 ## Setup
 
