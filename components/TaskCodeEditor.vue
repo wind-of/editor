@@ -10,6 +10,7 @@ const code = defineModel("code", { type: String, required: true })
 			v-model="code"
 			:lang="language"
 			:style="{ width: '100%', height: '100%' }"
+			:options="{ minimap: { enabled: false } }"
 		/>
 	</div>
 </template>
