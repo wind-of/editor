@@ -2,7 +2,8 @@
 import { executeCodeRequest } from "@/api"
 import { useDisplay } from "vuetify"
 
-const { smAndDown } = useDisplay()
+const { thresholds } = useDisplay()
+const smallScreen = computed(() => thresholds.value.sm + "px")
 
 // Стоило бы вынести логику, связанную с редактором, в отдельный store, но в рамках этой задачи оставлю как есть
 const language = ref(LanguagesEnum.JavaScript)
@@ -29,7 +30,7 @@ async function handleCodeExecution() {
 	<VApp>
 		<section class="main d-flex flex-column">
 			<AppHeader class="header" @run="handleCodeExecution" :isLoading="isLoading" />
-			<section class="content d-flex" :class="{ 'flex-column': smAndDown }">
+			<section class="content d-flex">
 				<TaskDescription />
 				<TaskCode
 					v-model:language="language"
@@ -56,8 +57,12 @@ async function handleCodeExecution() {
 	width: 100%;
 	height: calc(100% - var(--header-height));
 
+	@media screen and (max-width: 960px) {
+		flex-wrap: wrap;
+	}
+
 	& > * {
-		height: 100%;
+		flex-grow: 1;
 		overflow-y: auto;
 	}
 }
