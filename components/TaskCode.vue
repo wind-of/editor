@@ -17,7 +17,7 @@ const language = defineModel<LanguagesEnum>("language", { required: true })
 <style scoped>
 .task-code {
 	height: 100%;
-	border-right: 1px solid #e6e6e6;
+	border-top: 1px solid #e6e6e6;
 }
 .select {
 	width: 150px;
@@ -26,8 +26,11 @@ const language = defineModel<LanguagesEnum>("language", { required: true })
 .code-result {
 	border: 1px solid #e6e6e6;
 }
+.editor-wrapper {
+	min-height: 300px;
+}
 .code-result {
 	width: 100%;
-	height: 250px;
+	height: 200px;
 }
 </style>

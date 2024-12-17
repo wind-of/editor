@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { executeCodeRequest } from "@/api"
+import { useDisplay } from "vuetify"
+
+const { smAndDown } = useDisplay()
 
 const language = ref(LanguagesEnum.JavaScript)
 const code = ref("console.log('Hello, World!')")
@@ -25,7 +28,7 @@ async function handleCodeExecution() {
 	<VApp>
 		<section class="main d-flex flex-column">
 			<AppHeader class="header" @run="handleCodeExecution" :isLoading="isLoading" />
-			<section class="content d-flex">
+			<section class="content d-flex" :class="{ 'flex-column': smAndDown }">
 				<TaskDescription />
 				<TaskCode
 					v-model:language="language"
@@ -54,7 +57,6 @@ async function handleCodeExecution() {
 
 	& > * {
 		height: 100%;
-		width: 50%;
 		overflow-y: auto;
 	}
 }
